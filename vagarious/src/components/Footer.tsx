@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram, Youtube } from 'lucide-react';
 import isoLogo from "../assets/iso1.jpg";
 
 interface FooterProps {
@@ -21,20 +21,20 @@ export function Footer({ onNavigate }: FooterProps) {
 
             {/* Social icons */}
             <div className="flex gap-4 justify-start">
-              <a href="#" className="text-gray-400 hover:text-indigo-400 transition-colors">
+              <a href="https://www.linkedin.com/company/vagarious-solutions/" className="text-gray-400 hover:text-indigo-400 transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-indigo-400 transition-colors">
-                <Twitter size={20} />
+              <a href="https://youtube.com/@vagarioussolutions?si=AKoTxJ5gNuVQVGzF" className="text-gray-400 hover:text-indigo-400 transition-colors">
+                <Youtube size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-indigo-400 transition-colors">
+              <a href="https://www.facebook.com/share/1BrtwFZxa4/" className="text-gray-400 hover:text-indigo-400 transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-indigo-400 transition-colors">
+              <a href="https://www.instagram.com/vagarioussolutionspvt.ltd.5?igsh=MWV6ejZxazExYm84dg==" className="text-gray-400 hover:text-indigo-400 transition-colors">
                 <Instagram size={20} />
               </a>
             </div>
-            
+
           </div>
 
           {/* Quick Links */}
@@ -80,20 +80,22 @@ export function Footer({ onNavigate }: FooterProps) {
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-0.5 text-indigo-400" />
                 <span>
-                  2nd Floor, Spline Arcade, Ayyappa Society Main Rd, Sri Sai Nagar,
-                  Madhapur, Hyderabad, Telangana 500081
+                  Ground Floor, Shanmukha Empires, 83, Ayyappa Society Main Road
+                  Mega Hills,, Sri Sai Nagar,
+                  Madhapur
+                  Hyderabad Telangana 500081
                 </span>
               </li>
             </ul>
           </div>
-         <div className="pt-3 flex justify-center">
-  <img
-    src={isoLogo}
-    alt="ISO Certified"
-    className="object-contain rounded-xl shadow-lg"
-    style={{ width: "150px", height: "150px" }}
-  />
-</div>
+          <div className="pt-3 flex justify-center">
+            <img
+              src={isoLogo}
+              alt="ISO Certified"
+              className="object-contain rounded-xl shadow-lg"
+              style={{ width: "150px", height: "150px" }}
+            />
+          </div>
 
         </div>
 
