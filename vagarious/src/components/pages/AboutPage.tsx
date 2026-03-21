@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Rocket,Handshake } from "lucide-react";
 
 import { Brain, Target, Users, Award, Sparkles, TrendingUp, Zap } from 'lucide-react';
 
@@ -58,10 +59,10 @@ export function AboutPage() {
   ];
 
   const stats = [
-    { value: '500+', label: 'AI Models Deployed', gradient: 'from-blue-500 to-cyan-500' },
-    { value: '98%', label: 'Accuracy Rate', gradient: 'from-purple-500 to-pink-500' },
-    { value: '15+', label: 'Countries Served', gradient: 'from-orange-500 to-red-500' },
-    { value: '50+', label: 'AI Experts', gradient: 'from-green-500 to-emerald-500' },
+    { value: '50+', label: 'Websites & Apps Delivered', gradient: 'from-blue-500 to-cyan-500' },
+    { value: '100%', label: 'Client Satisfaction', gradient: 'from-purple-500 to-pink-500' },
+    { value: '15+', label: 'Happy clients', gradient: 'from-orange-500 to-red-500' },
+    { value: '24/7', label: 'Support', gradient: 'from-green-500 to-emerald-500' },
   ];
 
   return (
@@ -103,7 +104,7 @@ export function AboutPage() {
               About <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Us</span>
             </h1>
             <p className="text-xl text-gray-400">
-              A team of AI pioneers dedicated to building the future of intelligent systems
+              We are a growing software company focused on building innovative and reliable digital solutions. Our team is dedicated to creating high-quality web and mobile applications that help businesses succeed in today’s competitive market
             </p>
           </motion.div>
         </div>
@@ -171,10 +172,10 @@ export function AboutPage() {
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-indigo-600/10 to-purple-600/10 blur-2xl" />
                 <div className="relative grid grid-cols-2 gap-6">
                   {[
-                    { icon: Brain, label: 'AI Models' },
-                    { icon: Zap, label: 'Automation' },
-                    { icon: Target, label: 'Precision' },
-                    { icon: TrendingUp, label: 'Growth' },
+                    { icon:Rocket, label: 'To Deliver Innovative Solutions' },
+                    { icon: Zap, label: 'To Ensure Quality & Performance' },
+                    { icon:Handshake, label: 'To Build Strong Client Relationships' },
+                    { icon: TrendingUp, label: 'To Empower Digital Growth' },
                   ].map((item, index) => (
                     <motion.div
                       key={index}
@@ -207,7 +208,12 @@ export function AboutPage() {
           >
             <h2 className="text-4xl sm:text-5xl text-white mb-4">Our Values</h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              The principles that guide our AI innovation and client partnerships
+              We maintain honesty, transparency, and strong ethics in all our work and client relationships
+            </p>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              We work closely with our clients and team members to achieve the best results together.
+            </p>
             </p>
           </motion.div>
 

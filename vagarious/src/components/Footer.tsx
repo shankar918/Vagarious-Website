@@ -1,52 +1,39 @@
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram, Youtube } from 'lucide-react';
-import isoLogo from "../assets/iso1.jpg";
+import {
+  Mail, Phone, MapPin,
+  Linkedin, Facebook, Instagram, Youtube
+} from "lucide-react";
+import "../../src/App.css";
 
-interface FooterProps {
-  onNavigate: (page: string) => void;
-}
-
-export function Footer({ onNavigate }: FooterProps) {
+export function Footer({ onNavigate }) {
   return (
-    <footer className="bg-gradient-to-br from-gray-950 to-gray-900 text-white border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <h3 className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              Vagarious Solutions
-            </h3>
-            <p className="text-gray-400 text-sm">
+    <footer className="footer">
+      <div className="footer-container">
+
+        <div className="footer-grid">
+
+          {/* Company */}
+          <div className="footer-col">
+            <h3 className="footer-logo">Softcore Solutions</h3>
+
+            <p className="footer-desc">
               Empowering the future with AI innovation and cutting-edge technology solutions.
             </p>
 
-            {/* Social icons */}
-            <div className="flex gap-4 justify-start">
-              <a href="https://www.linkedin.com/company/vagarious-solutions/" className="text-gray-400 hover:text-indigo-400 transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="https://youtube.com/@vagarioussolutions?si=AKoTxJ5gNuVQVGzF" className="text-gray-400 hover:text-indigo-400 transition-colors">
-                <Youtube size={20} />
-              </a>
-              <a href="https://www.facebook.com/share/1BrtwFZxa4/" className="text-gray-400 hover:text-indigo-400 transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="https://www.instagram.com/vagarioussolutionspvt.ltd.5?igsh=MWV6ejZxazExYm84dg==" className="text-gray-400 hover:text-indigo-400 transition-colors">
-                <Instagram size={20} />
-              </a>
+            <div className="social-icons">
+              <a href="#"><Linkedin size={20} /></a>
+              <a href="#"><Youtube size={20} /></a>
+              <a href="#"><Facebook size={20} /></a>
+              <a href="#"><Instagram size={20} /></a>
             </div>
-
           </div>
 
-          {/* Quick Links */}
-          <div className='quicklines w-30'>
-            <h4 className="mb-4 text-white">Quick Links</h4>
-            <ul className="space-y-2">
-              {['Home', 'About', 'Services', 'Contact'].map((item) => (
+          {/* Links */}
+          <div className="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              {["Home", "About", "Services", "Contact"].map((item) => (
                 <li key={item}>
-                  <button
-                    onClick={() => onNavigate(item.toLowerCase())}
-                    className="text-gray-400 hover:text-indigo-400 transition-colors text-sm"
-                  >
+                  <button onClick={() => onNavigate(item.toLowerCase())}>
                     {item}
                   </button>
                 </li>
@@ -55,53 +42,45 @@ export function Footer({ onNavigate }: FooterProps) {
           </div>
 
           {/* Services */}
-          {/* <div className='p-0 ps-0 pe-0 mt-0 ms-0'>
-            <h4 className="mb-4 text-white">AI Solutions</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
+          <div className="footer-col">
+            <h4>AI Solutions</h4>
+            <ul>
               <li>Cloud AI</li>
               <li>Automation</li>
               <li>Data Intelligence</li>
               <li>Security Solutions</li>
             </ul>
-          </div> */}
-
-          {/* Contact Info */}
-          <div className='p-0 ps-0'>
-            <h4 className="mb-4 text-white">Contact Us</h4>
-            <ul className="space-y-3 text-sm text-gray-400">
-              <li className="flex items-start gap-2">
-                <Mail size={16} className="mt-0.5 text-indigo-400" />
-                <span>andemshankar630@gmail.com</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Phone size={16} className="mt-0.5 text-indigo-400" />
-                <span>+91 9652984415</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin size={16} className="mt-0.5 text-indigo-400" />
-                <span>
-                  Ground Floor, Shanmukha Empires, 83, Ayyappa Society Main Road
-                  Mega Hills,, Sri Sai Nagar,
-                  Madhapur
-                  Hyderabad Telangana 500081
-                </span>
-              </li>
-            </ul>
           </div>
-          <div className="pt-3 flex justify-center">
-            <img
-              src={isoLogo}
-              alt="ISO Certified"
-              className="object-contain rounded-xl shadow-lg"
-              style={{ width: "150px", height: "150px" }}
-            />
+
+          {/* Contact */}
+          <div className="footer-col">
+            <h4>Contact Us</h4>
+
+            <div className="contact-item">
+              <Mail size={16} />
+              <span>andemshankar630@gmail.com</span>
+            </div>
+
+            <div className="contact-item">
+              <Phone size={16} />
+              <span>+91 9652984415</span>
+            </div>
+
+            <div className="contact-item">
+              <MapPin size={16} />
+              <span>
+                Madhapur, Hyderabad, Telangana 500081
+              </span>
+            </div>
           </div>
 
         </div>
 
-        <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm text-gray-400 fs-5 text-white">
-          <p>&copy; {new Date().getFullYear()} Vagarious Solutions Pvt Ltd. All rights reserved.</p>
+        {/* Bottom */}
+        <div className="footer-bottom">
+          © {new Date().getFullYear()} Softcore Solutions Pvt Ltd. All rights reserved.
         </div>
+
       </div>
     </footer>
   );

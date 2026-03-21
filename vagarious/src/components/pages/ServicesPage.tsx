@@ -18,9 +18,9 @@ export default function ServicesPage({ onNavigate }: ServicesPageProps) {
   const services = [
     {
       icon: Briefcase,
-      title: "AI Solutions",
+      title: "Web development",
       description:
-        "We build intelligent systems to automate processes and improve decisions.",
+        "We build modern, responsive, and scalable web applications tailored to your business needs. From simple websites to complex platforms, our solutions ensure performance, security, and user-friendly design",
       bg: "from-indigo-500 to-purple-500",
     },
     {
@@ -59,7 +59,7 @@ export default function ServicesPage({ onNavigate }: ServicesPageProps) {
               Our Core Services
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              We deliver scalable web, mobile, and backend solutions to help businesses grow digitally.
+              We offer web development, mobile apps, custom software, UI/UX design, cloud services, and ongoing support to help your business grow digitally
             </p>
           </div>
 

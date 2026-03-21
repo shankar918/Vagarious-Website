@@ -102,7 +102,7 @@ export function ContactPage() {
               Get In <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Touch</span>
             </h1>
             <p className="text-xl text-gray-400">
-              Ready to transform your business with AI? We'd love to hear from you.
+              We’d love to hear from you! Whether you have a project idea, a question, or just want to say hello — our team is always ready to help
             </p>
           </motion.div>
         </div>
@@ -330,20 +330,20 @@ export function ContactPage() {
                 <div className="space-y-6">
                   {[
                     {
-                      title: 'AI-Powered Solutions',
-                      description: 'Leverage cutting-edge artificial intelligence to solve complex business challenges.',
+                      title: '🚀 Expert Team',
+                      description: 'Our skilled developers and designers bring creativity and technical expertise to every project',
                     },
                     {
-                      title: 'Expert Team',
-                      description: 'Our team of AI specialists brings decades of combined experience.',
+                      title: 'Innovative Approach',
+                      description: 'We use the latest technologies to build modern, scalable, and future-ready solutions',
                     },
                     {
-                      title: 'Proven Results',
-                      description: '500+ successful AI implementations across various industries.',
+                      title: 'On-Time Delivery',
+                      description: 'We respect deadlines and ensure timely delivery without compromising quality',
                     },
                     {
-                      title: '24/7 Support',
-                      description: 'Round-the-clock monitoring and support for your AI systems.',
+                      title: 'End-to-End Solutions',
+                      description: 'From idea to deployment, we handle everything to give you a smooth experience',
                     },
                   ].map((item, index) => (
                     <motion.div

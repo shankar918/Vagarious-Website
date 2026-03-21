@@ -12,8 +12,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const solutions = [
     {
       icon: Brain,
-      title: 'Intelligent Software Solutions',
-      description: 'We develop smart systems using advanced technologies to automate processes, improve decision-making, and deliver business value',
+      title: 'IT Maintenance Services',
+      description: 'IT Maintenance Services ensure that your software, systems, and infrastructure run smoothly, securely, and efficiently at all times',
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
@@ -37,10 +37,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
   ];
 
   const stats = [
-    { value: '500+', label: 'AI Models Deployed' },
-    { value: '98%', label: 'Accuracy Rate' },
-    { value: '150+', label: 'Enterprise Clients' },
-    { value: '24/7', label: 'AI Support' },
+    { value: '50+', label: 'Websites & Apps Delivered' },
+    { value: '100%', label: 'Client Satisfaction' },
+   { value: '5+', label: 'Happy Clients' },
+    { value: '24/7', label: 'Support' }
   ];
 
   const aiFeatures = [
@@ -337,7 +337,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </motion.div>
         </div>
 
-         <Button
+         {/* <Button
               onClick={() => onNavigate("admin-dashboard")}
               className=" overflow-hidden shadow-xl shadow-indigo-500/10 border-50"
             >
@@ -345,7 +345,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 Get Started
               
               </span>
-            </Button>
+            </Button> */}
       </section>
     </div>
   );

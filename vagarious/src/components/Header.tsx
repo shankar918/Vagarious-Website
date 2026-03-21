@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronRight} from "lucide-react";
 import { Button } from "./ui/button";
+import"../../src/App.css"
 
 
 export function Header({ currentPage, onNavigate }) {
@@ -77,14 +78,18 @@ export function Header({ currentPage, onNavigate }) {
           </nav>
 
           {/* ACTION BUTTONS */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="items-center gap-6">
             
             
             <Button
               onClick={() => onNavigate("contact")}
-              className=" overflow-hidden shadow-xl shadow-indigo-500/10 border-50"
+              className="header-button"
+              
             >
-              <span className="relative z-10">
+              <span className="relative z-10" style={{
+
+    
+              }}>
                 Get Started
               
               </span>
@@ -102,27 +107,38 @@ export function Header({ currentPage, onNavigate }) {
       </div>
 
       {/* MOBILE MENU (Full-screen Cinematic) */}
+ <div className={`mobile-menu ${mobileMenuOpen ? "open" : ""}`}>
+  
+  {/* BACKDROP */}
   <div
-  className={`fixed inset-0 z-40 md:hidden bg-slate-950 transition-all duration-300 ${
-    mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-  }`}
->
-  <div className="flex flex-col h-full px-5 pt-20 pb-6">
+    className="mobile-backdrop"
+    onClick={() => setMobileMenuOpen(false)}
+  />
+
+  {/* SIDE MENU */}
+  <div className="mobile-panel">
+
+    {/* CLOSE BUTTON */}
+    <button
+      className="close-btn"
+      onClick={() => setMobileMenuOpen(false)}
+    >
+      ✕
+    </button>
 
     {/* NAV */}
-    <div className="flex flex-col gap-3">
-      {navItems.map((item) => (
+    <div className="nav-items">
+      {navItems.map((item, index) => (
         <button
           key={item.path}
           onClick={() => {
             onNavigate(item.path);
             setMobileMenuOpen(false);
           }}
-          className={`w-full text-left px-4 py-3 rounded-lg text-base ${
-            currentPage === item.path
-              ? "bg-indigo-600 text-white"
-              : "text-gray-300 hover:bg-gray-800"
+          className={`nav-btn ${
+            currentPage === item.path ? "active" : ""
           }`}
+          style={{ animationDelay: `${index * 0.1}s` }}
         >
           {item.name}
         </button>
@@ -130,30 +146,16 @@ export function Header({ currentPage, onNavigate }) {
     </div>
 
     {/* CTA */}
-    <div className="mt-auto">
-      <Button
+    <div className="cta-container">
+      <button
+        className="cta-btn"
         onClick={() => {
           onNavigate("contact");
           setMobileMenuOpen(false);
         }}
-        className="w-full bg-indigo-600 hover:bg-indigo-700 py-4 text-base rounded-lg"
       >
-        Get Started
-      </Button>
-    </div>
-
-    
-    {/* CTA */}
-    <div className="mt-auto">
-      <Button
-        onClick={() => {
-          onNavigate("admin-dashboard");
-          setMobileMenuOpen(false);
-        }}
-        className="w-full bg-indigo-600 hover:bg-indigo-700 py-4 text-base rounded-lg"
-      >
-        Get Started
-      </Button>
+        Get Started 🚀
+      </button>
     </div>
 
   </div>
