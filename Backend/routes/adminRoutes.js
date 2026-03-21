@@ -1,34 +1,25 @@
-// backend/routes/adminRoutes.js
-import express from "express";
-import db from "../database.js";
-
+const express = require("express");
 const router = express.Router();
+const Admin = require("../models/Admin");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
-// ✅ Admin Login
-router.post("/login", (req, res) => {
+router.post("/login", async (req, res) => {
+  console.log("Request body:", req.body); // <-- Add this
   const { username, password } = req.body;
 
-  const sql = "SELECT * FROM admins WHERE username = ? AND password = ?";
-  db.query(sql, [username, password], (err, result) => {
-    if (err) return res.status(500).json({ success: false, message: "Server error" });
+  if (!username || !password) {
+    return res.status(400).json({ message: "Username & password required" });
+  }
 
-    if (result.length > 0) {
-      res.json({ success: true, message: "Login Successful" });
-    } else {
-      res.status(401).json({ success: false, message: "Invalid Credentials" });
-    }
-  });
+  const admin = await Admin.findOne({ username });
+  if (!admin) return res.status(400).json({ message: "Invalid username" });
+
+  const isMatch = await bcrypt.compare(password, admin.password);
+  if (!isMatch) return res.status(400).json({ message: "Invalid password" });
+
+  const token = jwt.sign({ id: admin._id }, "SECRET_KEY", { expiresIn: "1d" });
+  res.json({ token });
 });
 
-// ✅ Add Job (Admin only)
-router.post("/add-job", (req, res) => {
-  const { title, description, location, salary } = req.body;
-  const sql = "INSERT INTO jobs (title, description, location, salary) VALUES (?, ?, ?, ?)";
-
-  db.query(sql, [title, description, location, salary], (err) => {
-    if (err) return res.status(500).json({ success: false, message: "Failed to add job" });
-    res.json({ success: true, message: "Job Added Successfully!" });
-  });
-});
-
-export default router;
+module.exports = router;
