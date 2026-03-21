@@ -11,27 +11,27 @@ interface HomePageProps {
 export function HomePage({ onNavigate }: HomePageProps) {
   const solutions = [
     {
-      icon: Cloud,
-      title: 'Technical Project Manpower',
-      description: 'Leverage the power of cloud-based artificial intelligence to scale your operations and unlock new possibilities.',
+      icon: Brain,
+      title: 'Intelligent Software Solutions',
+      description: 'We develop smart systems using advanced technologies to automate processes, improve decision-making, and deliver business value',
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
       icon: Cpu,
-      title: 'Non Technical Skilled Manpower',
-      description: 'Streamline your workflows with intelligent automation that learns and adapts to your business processes.',
+      title: 'Mobile Application Development',
+      description: 'We develop fast and user-friendly mobile applications that help businesses reach customers anytime, anywhere',
       gradient: 'from-purple-500 to-pink-500',
     },
     {
-      icon: Database,
-      title: 'Healthcare Manpower',
-      description: 'Transform raw data into actionable insights with advanced analytics and machine learning algorithms.',
+      icon:Database,
+      title: 'Full Stack Development',
+      description: 'We provide complete end-to-end development solutions, from frontend design to backend integration and deployment',
       gradient: 'from-orange-500 to-red-500',
     },
     {
       icon: Shield,
-      title: 'Financial and Accounting Manpower',
-      description: 'Protect your digital assets with AI-powered security that detects and prevents threats in real-time.',
+      title: 'Web Application Development',
+      description: 'We build modern, responsive, and high-performance web applications tailored to business needs, ensuring scalability and smooth user experience',
       gradient: 'from-green-500 to-emerald-500',
     },
   ];
@@ -45,18 +45,18 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
   const aiFeatures = [
     {
-      title: 'Global Talent Network',
-      description: 'With a vast network of professionals across the globe, we help businesses connect with top talent from various domains, ensuring diversity, flexibility, and excellence in every hire.',
+      title: 'High Performance',
+      description: 'We build fast and efficient applications that deliver smooth user experience',
       icon: Brain,
     },
     {
-      title: 'Experienced HR Team',
-      description: 'Our recruitment specialists bring years of expertise across multiple industries. They understand both client expectations and candidate aspirations, ensuring the perfect match every time',
-      icon: Network,
+      title: 'Secure Solutions',
+      description: 'We ensure strong security and data protection in every project we develop.',
+      icon: Shield,
     },
     {
-      title: 'Verified Candidates',
-      description: 'Every candidate in our network is thoroughly screened and verified through background checks, skill assessments, and interviews — so you get only the most reliable and qualified professionals for your organization',
+      title: 'Scalable Systems',
+      description: 'We create scalable software solutions that grow with your business',
       icon: Database,
     },
   ];
@@ -336,6 +336,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </div>
           </motion.div>
         </div>
+
+         <Button
+              onClick={() => onNavigate("admin-dashboard")}
+              className=" overflow-hidden shadow-xl shadow-indigo-500/10 border-50"
+            >
+              <span className="relative z-10">
+                Get Started
+              
+              </span>
+            </Button>
       </section>
     </div>
   );

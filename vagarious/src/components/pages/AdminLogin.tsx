@@ -1,65 +1,61 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import React, { useState, ChangeEvent, FormEvent } from "react";
+// import { useNavigate } from "react-router-dom"; // Use this instead of next/navigation
 
-const AdminLogin: React.FC = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+// interface LoginResponse {
+//   token: string;
+//   message?: string;
+// }
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
+// export default function AdminLogin() {
+//   const [formData, setFormData] = useState({ username: "", password: "" });
+//   const [error, setError] = useState<string>("");
+//   const [loading, setLoading] = useState<boolean>(false);
+  
+//   const navigate = useNavigate(); // Hook for Vite/React navigation
 
-    try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
+//   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//   };
 
-      const data = await res.json();
-      if (res.ok) {
-        localStorage.setItem("adminToken", data.token);
-        navigate("/admin");
-      } else {
-        alert(data.message || "Login failed");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Server error");
-    }
-  };
+//   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+//     e.preventDefault();
+//     setError("");
+//     setLoading(true);
 
-  return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-2xl shadow-md w-96">
-        <h2 className="text-2xl font-bold text-center mb-6">Admin Login</h2>
-        <form onSubmit={handleLogin} className="flex flex-col gap-4">
-          <input
-            type="email"
-            placeholder="Email"
-            className="border p-2 rounded"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            className="border p-2 rounded"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button
-            type="submit"
-            className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-          >
-            Login
-          </button>
-        </form>
-      </div>
-    </div>
-  );
-};
+//     try {
+//       const response = await fetch("http://localhost:5000/api/admin/login", {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify(formData),
+//       });
 
-export default AdminLogin;
+//       const data: LoginResponse = await response.json();
+
+//       if (response.ok) {
+//         localStorage.setItem("adminToken", data.token);
+//         // Redirect to your dashboard route
+//         navigate("/admin/dashboard"); 
+//       } else {
+//         setError(data.message || "Invalid credentials");
+//       }
+//     } catch (err) {
+//       setError("Network error. Is the backend running?");
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return (
+//     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '50px' }}>
+//       <h1>Admin Login</h1>
+//       {error && <p style={{ color: "red" }}>{error}</p>}
+//       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '300px' }}>
+//         <input name="username" placeholder="Username" onChange={handleChange} required />
+//         <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
+//         <button type="submit" disabled={loading}>
+//           {loading ? "Logging in..." : "Login"}
+//         </button>
+//       </form>
+//     </div>
+//   );
+// }

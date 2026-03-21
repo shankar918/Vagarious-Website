@@ -150,20 +150,13 @@ export function AboutPage() {
               <h2 className="text-4xl text-white mb-6">Our Mission</h2>
               <div className="space-y-4 text-gray-400">
                 <p>
-                  Founded in 2018, Vagarious Solutions began with a bold vision: to make artificial 
-                  intelligence accessible and impactful for businesses of all sizes. What started 
-                  as a small team of AI researchers has evolved into a leading AI solutions provider.
+                  Our mission is to deliver high-quality, scalable, and innovative software solutions that help businesses grow in the digital world
                 </p>
                 <p>
-                  We specialize in developing intelligent systems that learn, adapt, and deliver 
-                  measurable business value. Our AI models power everything from predictive analytics 
-                  to natural language processing, helping organizations make smarter decisions faster.
+               We specialize in developing intelligent systems that learn, adapt, and deliver measurable business value, leveraging technologies such as artificial intelligence for predictive analytics and natural language processing to enable smarter decision-making
                 </p>
                 <p>
-                  Today, we're proud to serve over 500 enterprise clients worldwide, deploying 
-                  AI solutions that drive innovation and create competitive advantages. Every project 
-                  is an opportunity to push the boundaries of what's possible with artificial intelligence.
-                </p>
+                 We focus on building reliable web and mobile applications that improve efficiency, solve real-world problems, and create meaningful user experiences while ensuring performance, security, and long-term value for our clients.</p>
               </div>
             </motion.div>
 

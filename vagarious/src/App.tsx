@@ -6,11 +6,11 @@ import { HomePage } from './components/pages/HomePage';
 import { AboutPage } from './components/pages/AboutPage';
 import ServicesPage from './components/pages/ServicesPage';
 import { ContactPage } from './components/pages/ContactPage';
-import CareersPage from './components/pages/Careers';
+// import CareersPage from './components/pages/Careers';
 // import { AIChatbot } from './components/AIChatbot';
 import { Toaster } from './components/ui/sonner';
-import Loginpag from './components/pages/AdminLogin';
-import AdminDashboard from './components/pages/AdminDashboard';
+// import {AdminDashboard} from './components/pages/AdminDashboard';
+// import {Adminlogin} from "./components/pages/Adminlogin"
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -35,11 +35,10 @@ export default function App() {
       case 'contact':
         return <ContactPage />;
       case 'careers':
-        return <CareersPage />;
-      case 'admin-login':
-        return <Loginpag onNavigate={handleNavigate} />;
       case 'admin-dashboard':
         return <AdminDashboard onNavigate={handleNavigate} />;
+        case 'admin-login':
+        return <Adminlogin onNavigate={handleNavigate}/>
       default:
         return <HomePage onNavigate={handleNavigate} />;
     }
@@ -51,7 +50,7 @@ export default function App() {
       <main className="flex-1">{renderPage()}</main>
       <Footer onNavigate={handleNavigate} />
       {/* <AIChatbot /> */}
-      <Toaster position="top-right" richColors />
+      {/* <Toaster position="top-right" richColors /> */}
     </div>
   );
 }
